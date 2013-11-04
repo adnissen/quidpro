@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Upload</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>:)</h1>
+    <p>Path to file: <a href='<%= path %>'><%= path %></a></p>
+    <p><a href="/">Home</a></p>
+  </body>
+</html>

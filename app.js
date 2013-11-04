@@ -34,11 +34,17 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/users', user.list);
+
 app.get('/upload', function(req, res){
   res.render('upload');
 });
 app.post('/upload', function(req, res, next){
-  res.redirect('/');
+  var _path = req.files.fileName.path;
+  res.render('uploadComplete', {path: req.files.fileName.path.replace('/public', '')});
+});
+
+app.get('/public/uploads/:file', function(req, res){
+  res.redirect('/uploads/' + req.params.file);
 });
 
 http.createServer(app).listen(app.get('port'), function(){
