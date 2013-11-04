@@ -40,12 +40,6 @@ app.get('/upload', function(req, res){
 });
 app.post('/upload', function(req, res, next){
   var _path = req.files.fileName.path;
-  setTimeout(function(){
-    fs.unlink(req.files.fileName.path, function(err){
-      if(err) throw err;
-      console.log("deleted " + req.files.fileName.path);
-    });
-  }, 86400);
   res.render('uploadComplete', {path: req.files.fileName.path.replace('/public', '')});
 });
 
