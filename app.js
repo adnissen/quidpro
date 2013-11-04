@@ -23,6 +23,7 @@ app.use(express.urlencoded());
 app.use(express.methodOverride());
 app.use(express.cookieParser('catsonyourkeyboard'));
 app.use(express.session());
+app.use(express.limit('5gb'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.bodyParser({ keepExtensions: true, uploadDir: "./public/uploads" }));
 app.use(app.router);
